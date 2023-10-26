@@ -4,4 +4,4 @@ title: Contact
 permalink: /contact/
 ---
 
-Coming soon...
+Coming soon...check back soon.
