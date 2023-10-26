@@ -3,10 +3,14 @@
 
 @import "minima";
 
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
 header.site-header {
     background: #333;
     color: #fff;
-
 }
 
 .site-title, .site-title:visited {
@@ -20,9 +24,25 @@ header.site-header {
     line-height: 1.5;
 }
 
+.welcome {
+    border-radius: 20px;
+    border: 1px solid #e8e8e8;
+    background: #dce2f3;
+    padding: 20px;
+    font-size: 125%;
+    margin: 0 0 30px 0;
+}
+
+.headshot {
+    border-radius: 230px;
+    float:right;
+    max-width: 200px;
+    margin: 0 0 10px 30px;
+}
+
 header.site-header div.wrapper a.site-title img {
     width: 30px;
-    margin: -2px 10px 0 0;
+    margin: 0 10px 0 0;
 }
 
 .site-footer {
@@ -35,6 +55,16 @@ header.site-header div.wrapper a.site-title img {
     }
     .site-nav {
         background-color: #333;
+    }
+    .headshot {
+        border-radius: 230px;
+        float:right;
+        max-width: 150px;
+        margin: 0 0 10px 20px;
+    }
+    .welcome {
+        padding: 15px;
+        font-size: 115%
     }
 }
 

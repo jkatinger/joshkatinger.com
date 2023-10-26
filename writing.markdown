@@ -4,7 +4,7 @@ title: Writing
 permalink: /writing/
 ---
 
-Here you will find...
+Coming soon...
 
 
 {% for post in site.categories.writing %}

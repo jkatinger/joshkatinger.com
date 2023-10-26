@@ -4,8 +4,5 @@
 
 layout: home
 ---
-<h1>Coming soon...</h1>
 
-<p>Placeholder home page content!</p>
-
-<hr />
+Coming soon...
