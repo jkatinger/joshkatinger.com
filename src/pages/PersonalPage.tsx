@@ -58,7 +58,7 @@ const PersonalPage = () => {
         </section>
 
         {/* Aviation History Section */}
-        <section className="py-24 md:py-32">
+        <section className="pt-0 pb-24 md:pb-32">
           <div className="container mx-auto px-6">
             <div className="max-w-6xl mx-auto">
               {/* Photo Banner */}
