@@ -40,7 +40,7 @@ const PersonalPage = () => {
       <Header />
       <main className="pt-16">
         {/* Hero Section */}
-        <section className="py-24 md:py-32 bg-gradient-subtle">
+        <section className="pt-24 md:pt-32 pb-12 md:pb-16 bg-gradient-subtle">
           <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto text-center">
               <span className="text-primary font-medium text-sm uppercase tracking-wider">
