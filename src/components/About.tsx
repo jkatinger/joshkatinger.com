@@ -49,7 +49,7 @@ const About = () => {
             {/* Right: Content */}
             <div className="space-y-6">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Years ago, I took the CliftonStrengths assessment — twice, because I didn't 
+                Years ago, I took the <a href="https://www.gallup.com/cliftonstrengths/en/252137/home.aspx" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">CliftonStrengths assessment</a> — twice, because I didn't 
                 believe the first result. Both times, my leading strength came back as 
                 "Context." I had no idea what to do with it. It didn't sound as flashy as 
                 "Strategic" or "Communication." It sounded like someone politely calling me nostalgic.
