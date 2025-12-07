@@ -19,9 +19,9 @@ const PersonalPage = () => {
       title: "Life in the Fast Lane: The Amazing Story of a Skyraider",
       author: "Tom Dwelle",
       description:
-        "Narrated the incredible story of the Douglas A-1 Skyraider, a legendary attack aircraft that served in Korea, Vietnam, and beyond.",
+        "Narrated the autobiography of Tom Dwelle, a decorated USAF pilot who flew Skyraiders in Vietnam, built a remarkable business career, and became a legendary Reno Air Racer.",
       link: "https://www.amazon.com/Life-Fast-Lane-Amazing-Skyraider/dp/B0DHLY3BLT/",
-      tags: ["Military Aviation", "A-1 Skyraider", "Naval Aviation"],
+      tags: ["Vietnam Aviation", "A-1 Skyraider", "Reno Air Racing"],
       type: "audiobook",
     },
     {
