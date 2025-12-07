@@ -38,9 +38,9 @@ const Header = () => {
         <nav className="flex items-center justify-between h-16 md:h-20">
           <Link
             to="/"
-            className="font-display text-xl font-bold text-white hover:text-sky-400 transition-colors"
+            className="font-display text-xl font-bold text-white hover:text-primary transition-colors"
           >
-            JK<span className="text-sky-400">.</span>
+            JK<span className="text-primary">.</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -51,7 +51,7 @@ const Header = () => {
                 to={link.href}
                 className={`text-base font-semibold transition-colors duration-200 ${
                   isActive(link.href)
-                    ? "text-sky-400"
+                    ? "text-primary"
                     : "text-zinc-300 hover:text-white"
                 }`}
               >
@@ -79,7 +79,7 @@ const Header = () => {
                   to={link.href}
                   className={`py-2 text-base font-semibold transition-colors ${
                     isActive(link.href)
-                      ? "text-sky-400"
+                      ? "text-primary"
                       : "text-zinc-300 hover:text-white"
                   }`}
                   onClick={() => setIsMobileMenuOpen(false)}
