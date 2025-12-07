@@ -38,7 +38,7 @@ const PersonalPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main className="pt-20">
+      <main className="pt-16">
         {/* Hero Section */}
         <section className="py-24 md:py-32 bg-gradient-subtle">
           <div className="container mx-auto px-6">
