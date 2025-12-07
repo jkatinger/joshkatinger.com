@@ -7,8 +7,8 @@ const Contact = () => {
       icon: Mail,
       title: "Email",
       description: "Drop me a line anytime",
-      action: "jkatinger@gmail.com",
-      href: "mailto:jkatinger@gmail.com",
+      action: "josh@katinger.com",
+      href: "mailto:josh@katinger.com",
     },
     {
       icon: Linkedin,
@@ -79,7 +79,7 @@ const Contact = () => {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button variant="hero" size="lg" asChild>
-                <a href="mailto:jkatinger@gmail.com">
+                <a href="mailto:josh@katinger.com">
                   <Mail className="w-5 h-5 mr-2" />
                   Send Me a Message
                 </a>
