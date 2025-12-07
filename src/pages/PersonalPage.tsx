@@ -37,7 +37,7 @@ const PersonalPage = () => {
                 Beyond the Day Job
               </span>
               <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mt-4 mb-6">
-                Personal <span className="text-gradient">Pursuits</span>
+                Personal Pursuits
               </h1>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 When I'm not building products, I pursue my passion for aviation history 
@@ -144,7 +144,7 @@ const PersonalPage = () => {
                 Consulting
               </span>
               <h2 className="font-display text-3xl md:text-4xl font-bold mt-4 mb-6">
-                Independent <span className="text-gradient">Consulting</span>
+                Independent Consulting
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
                 I occasionally take on consulting engagements, focusing on product strategy, 

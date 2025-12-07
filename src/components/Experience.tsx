@@ -97,7 +97,7 @@ const Experience = () => {
               Career
             </span>
             <h2 className="font-display text-4xl md:text-5xl font-bold mt-4 mb-6">
-              Professional <span className="text-gradient">Experience</span>
+              Professional Experience
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               14+ years building products, leading teams, and driving impact across SaaS platforms.

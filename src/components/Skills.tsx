@@ -56,7 +56,7 @@ const Skills = () => {
               Expertise
             </span>
             <h2 className="font-display text-4xl md:text-5xl font-bold mt-4 mb-6">
-              Skills & <span className="text-gradient">Capabilities</span>
+              Skills & Capabilities
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               A comprehensive toolkit for building and scaling SaaS platforms in data, integrations, and automation.
@@ -100,7 +100,7 @@ const Skills = () => {
                 key={stat.label}
                 className="text-center p-6 rounded-xl bg-card border border-border"
               >
-                <div className="font-display text-4xl font-bold text-gradient mb-2">
+                <div className="font-display text-4xl font-bold text-primary mb-2">
                   {stat.value}
                 </div>
                 <div className="text-sm text-muted-foreground">{stat.label}</div>
