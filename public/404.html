@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Redirecting...</title>
+    <script>
+      // Single Page App redirect for GitHub Pages
+      // Converts the path to a query string and redirects to index.html
+      // The main app will then restore the correct route
+      const segmentCount = 0; // Number of path segments to keep (0 for root domain)
+      const location = window.location;
+      const path = location.pathname.slice(1);
+      const query = location.search;
+      const hash = location.hash;
+      
+      location.replace(
+        location.origin + 
+        '/?p=/' + path + 
+        (query ? '&q=' + encodeURIComponent(query.slice(1)) : '') +
+        hash
+      );
+    </script>
+  </head>
+  <body>
+    <p>Redirecting...</p>
+  </body>
+</html>
