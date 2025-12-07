@@ -1,4 +1,5 @@
 import { Linkedin, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -31,9 +32,9 @@ const Hero = () => {
             </p>
             <p>
               This is my personal site where you can explore{" "}
-              <a href="/professional" className="text-primary hover:underline">what I build</a>,{" "}
-              <a href="/personal" className="text-primary hover:underline">what I obsess over</a>, and{" "}
-              <a href="/contact" className="text-primary hover:underline">reach out</a> if anything here sparks a conversation.
+              <Link to="/professional" className="text-primary hover:underline">what I build</Link>,{" "}
+              <Link to="/personal" className="text-primary hover:underline">what I obsess over</Link>, and{" "}
+              <Link to="/contact" className="text-primary hover:underline">reach out</Link> if anything here sparks a conversation.
             </p>
           </div>
           
