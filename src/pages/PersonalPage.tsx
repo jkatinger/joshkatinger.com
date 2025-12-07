@@ -12,7 +12,7 @@ const PersonalPage = () => {
         "Narrated the memoirs of legendary WWII Triple Ace Clarence 'Bud' Anderson, who flew P-51 Mustangs with the 357th Fighter Group and achieved 16.25 aerial victories.",
       link: "https://www.amazon.com/Fly-Fight-Memoirs-Triple-Ace/dp/B0CBNNWK8F/",
       tags: ["WWII Aviation", "P-51 Mustang", "357th Fighter Group"],
-      featured: true,
+      type: "audiobook",
     },
     {
       title: "Life in the Fast Lane: The Amazing Story of a Skyraider",
@@ -21,7 +21,16 @@ const PersonalPage = () => {
         "Narrated the incredible story of the Douglas A-1 Skyraider, a legendary attack aircraft that served in Korea, Vietnam, and beyond.",
       link: "https://www.amazon.com/Life-Fast-Lane-Amazing-Skyraider/dp/B0DHLY3BLT/",
       tags: ["Military Aviation", "A-1 Skyraider", "Naval Aviation"],
-      featured: true,
+      type: "audiobook",
+    },
+    {
+      title: "Through My Sights: The Serendipitous Life of a Mustang Pilot",
+      author: "Col. Joseph A. Peterburs",
+      description:
+        "Completely revised, edited, and graphically redesigned this autobiography for Joe Peterburs, a WWII fighter pilot and life-long Air Force veteran.",
+      link: "",
+      tags: ["WWII Aviation", "P-51 Mustang", "Air Force"],
+      type: "book",
     },
   ];
 
@@ -73,21 +82,27 @@ const PersonalPage = () => {
                     key={book.title}
                     className="group relative p-6 md:p-8 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all duration-300 shadow-card hover:shadow-elevated"
                   >
-                    {/* Featured Badge */}
-                    {book.featured && (
-                      <div className="absolute top-4 right-4">
-                        <span className="px-3 py-1 text-xs font-medium bg-accent/20 text-accent rounded-full flex items-center gap-1">
+                    {/* Type Badge */}
+                    <div className="absolute top-4 right-4 mb-4">
+                      <span className="px-3 py-1 text-xs font-medium bg-accent/20 text-accent rounded-full flex items-center gap-1">
+                        {book.type === "audiobook" ? (
                           <Headphones className="w-3 h-3" />
-                          Audiobook
-                        </span>
-                      </div>
-                    )}
+                        ) : (
+                          <BookOpen className="w-3 h-3" />
+                        )}
+                        {book.type === "audiobook" ? "Audiobook" : "Book"}
+                      </span>
+                    </div>
 
                     {/* Content */}
-                    <div className="space-y-4">
+                    <div className="space-y-4 pt-6">
                       <div className="flex items-start gap-4">
                         <div className="p-3 rounded-lg bg-primary/10 shrink-0">
-                          <BookOpen className="w-6 h-6 text-primary" />
+                          {book.type === "audiobook" ? (
+                            <Headphones className="w-6 h-6 text-primary" />
+                          ) : (
+                            <BookOpen className="w-6 h-6 text-primary" />
+                          )}
                         </div>
                         <div>
                           <h3 className="font-display text-xl font-bold group-hover:text-primary transition-colors">
@@ -116,18 +131,20 @@ const PersonalPage = () => {
                       </div>
 
                       {/* CTA */}
-                      <div className="pt-4">
-                        <Button asChild variant="outline" className="gap-2">
-                          <a
-                            href={book.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            Listen on Amazon
-                            <ExternalLink className="w-4 h-4" />
-                          </a>
-                        </Button>
-                      </div>
+                      {book.link && (
+                        <div className="pt-4">
+                          <Button asChild variant="outline" className="gap-2">
+                            <a
+                              href={book.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              {book.type === "audiobook" ? "Listen on Amazon" : "View on Amazon"}
+                              <ExternalLink className="w-4 h-4" />
+                            </a>
+                          </Button>
+                        </div>
+                      )}
                     </div>
                   </div>
                 ))}
