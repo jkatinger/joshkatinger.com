@@ -44,9 +44,6 @@ const About = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              {/* Decorative elements */}
-              <div className="absolute -top-4 -right-4 w-24 h-24 border-2 border-primary/30 rounded-2xl" />
-              <div className="absolute -bottom-4 -left-4 w-32 h-32 border-2 border-accent/30 rounded-2xl" />
             </div>
 
             {/* Right: Content */}
