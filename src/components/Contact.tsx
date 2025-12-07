@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Mail, Linkedin, Github, Calendar, ArrowRight } from "lucide-react";
+import { Mail, Linkedin, ArrowRight } from "lucide-react";
 
 const Contact = () => {
   const contactMethods = [
@@ -7,22 +7,15 @@ const Contact = () => {
       icon: Mail,
       title: "Email",
       description: "Drop me a line anytime",
-      action: "james@example.com",
-      href: "mailto:james@example.com",
+      action: "jkatinger@gmail.com",
+      href: "mailto:jkatinger@gmail.com",
     },
     {
       icon: Linkedin,
       title: "LinkedIn",
       description: "Let's connect professionally",
-      action: "linkedin.com/in/james",
-      href: "https://linkedin.com",
-    },
-    {
-      icon: Calendar,
-      title: "Schedule a Call",
-      description: "Book a 30-min chat",
-      action: "calendly.com/james",
-      href: "https://calendly.com",
+      action: "linkedin.com/in/josh-katinger",
+      href: "https://www.linkedin.com/in/josh-katinger/",
     },
   ];
 
@@ -43,13 +36,13 @@ const Contact = () => {
               Let's Build Something <span className="text-gradient">Great</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Whether you have a project in mind, want to discuss product strategy, 
-              or just want to connect — I'd love to hear from you.
+              I'm always looking to connect with and learn from people building in the SaaS space — 
+              especially where data flows, integration strategy, or document automation are central.
             </p>
           </div>
 
           {/* Contact Cards */}
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
+          <div className="grid md:grid-cols-2 gap-6 mb-12 max-w-2xl mx-auto">
             {contactMethods.map((method) => (
               <a
                 key={method.title}
@@ -85,12 +78,11 @@ const Contact = () => {
               Let's discuss how I can help you achieve your product goals.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button variant="hero" size="lg">
-                <Mail className="w-5 h-5 mr-2" />
-                Send Me a Message
-              </Button>
-              <Button variant="outline" size="lg">
-                Download Resume
+              <Button variant="hero" size="lg" asChild>
+                <a href="mailto:jkatinger@gmail.com">
+                  <Mail className="w-5 h-5 mr-2" />
+                  Send Me a Message
+                </a>
               </Button>
             </div>
           </div>

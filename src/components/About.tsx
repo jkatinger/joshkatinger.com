@@ -1,21 +1,22 @@
-import { User, Target, Lightbulb } from "lucide-react";
+import { Database, Workflow, Cpu } from "lucide-react";
+import joshHeadshot from "@/assets/josh-headshot.jpeg";
 
 const About = () => {
   const highlights = [
     {
-      icon: User,
-      title: "User-Centric",
-      description: "Obsessed with understanding user needs and translating them into delightful experiences.",
+      icon: Database,
+      title: "Data Infrastructure",
+      description: "Building scalable, secure data flows and integration patterns that power complex customer use cases.",
     },
     {
-      icon: Target,
-      title: "Results-Driven",
-      description: "Track record of shipping products that drive measurable business impact and growth.",
+      icon: Workflow,
+      title: "Business Automation",
+      description: "Driving intelligent document generation and workflow automation for enterprise customers.",
     },
     {
-      icon: Lightbulb,
-      title: "Innovation-Focused",
-      description: "Passionate about leveraging emerging technologies to solve complex problems.",
+      icon: Cpu,
+      title: "AI Integration",
+      description: "Defining platform-level requirements to enable AI-driven workflows with secure data handling.",
     },
   ];
 
@@ -34,13 +35,14 @@ const About = () => {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Left: Image/Visual */}
+            {/* Left: Image */}
             <div className="relative">
               <div className="aspect-square rounded-2xl bg-gradient-card border border-border overflow-hidden shadow-elevated">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-32 h-32 rounded-full bg-gradient-primary animate-pulse-glow" />
-                </div>
+                <img 
+                  src={joshHeadshot} 
+                  alt="Josh Katinger - Software Product Manager"
+                  className="w-full h-full object-cover"
+                />
               </div>
               {/* Decorative elements */}
               <div className="absolute -top-4 -right-4 w-24 h-24 border-2 border-primary/30 rounded-2xl" />
@@ -50,21 +52,21 @@ const About = () => {
             {/* Right: Content */}
             <div className="space-y-6">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                I'm a product manager with 8+ years of experience building software 
-                products at startups and enterprise companies. Currently leading product 
-                at a Series B fintech, where I've helped scale the platform from 10K to 
-                500K+ users.
+                I'm a Principal Product Manager focused on building products that power 
+                business-critical workflows — from data infrastructure and integrations 
+                to intelligent document generation.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                My approach combines deep user research, data-driven decision making, 
-                and close collaboration with engineering and design teams. I believe 
-                great products are built at the intersection of user needs, business 
-                goals, and technical feasibility.
+                At Intellistack, I'm currently leading product strategy for data and integrations 
+                on the next-generation "Streamline" platform — a ground-up rebuild designed for 
+                scale, security, and extensibility. My work spans zero-data-retention integration 
+                architecture and iPaaS adoption to support a broader ecosystem of third-party tools.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                When I'm not shipping features, you'll find me mentoring aspiring PMs, 
-                contributing to product communities, and exploring the latest in AI/ML 
-                applications.
+                My approach blends systems thinking, cross-functional collaboration, and a 
+                strong sense of customer value. I've worked extensively on both early-stage 
+                platform launches and established products — optimizing performance, expanding 
+                capabilities, and driving customer adoption.
               </p>
             </div>
           </div>
