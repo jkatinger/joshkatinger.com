@@ -28,9 +28,9 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-zinc-900 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-zinc-800 ${
         isScrolled
-          ? "border-b border-zinc-700"
+          ? "border-b border-zinc-600"
           : ""
       }`}
     >
@@ -38,9 +38,9 @@ const Header = () => {
         <nav className="flex items-center justify-between h-16 md:h-20">
           <Link
             to="/"
-            className="font-display text-xl font-bold text-white hover:text-primary transition-colors"
+            className="font-display text-xl font-bold text-white hover:text-sky-400 transition-colors"
           >
-            JK<span className="text-primary">.</span>
+            JK<span className="text-sky-400">.</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -51,7 +51,7 @@ const Header = () => {
                 to={link.href}
                 className={`text-sm transition-colors duration-200 ${
                   isActive(link.href)
-                    ? "text-primary font-medium"
+                    ? "text-sky-400 font-medium"
                     : "text-zinc-300 hover:text-white"
                 }`}
               >
@@ -71,7 +71,7 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-zinc-700 animate-fade-in">
+          <div className="md:hidden py-4 border-t border-zinc-600 animate-fade-in">
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
                 <Link
@@ -79,7 +79,7 @@ const Header = () => {
                   to={link.href}
                   className={`py-2 transition-colors ${
                     isActive(link.href)
-                      ? "text-primary font-medium"
+                      ? "text-sky-400 font-medium"
                       : "text-zinc-300 hover:text-white"
                   }`}
                   onClick={() => setIsMobileMenuOpen(false)}
