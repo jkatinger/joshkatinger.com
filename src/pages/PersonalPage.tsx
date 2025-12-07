@@ -152,7 +152,7 @@ const PersonalPage = () => {
         </section>
 
         {/* Consulting Section */}
-        <section className="py-6 md:py-8 bg-gradient-subtle">
+        <section className="pt-0 pb-6 md:pb-8 bg-gradient-subtle">
           <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto text-center">
               <span className="text-primary font-medium text-sm uppercase tracking-wider">
