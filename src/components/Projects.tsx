@@ -62,7 +62,7 @@ const Projects = () => {
               Portfolio
             </span>
             <h2 className="font-display text-4xl md:text-5xl font-bold mt-4 mb-6">
-              Featured <span className="text-gradient">Projects</span>
+              Featured Projects
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               A selection of impactful products I've had the privilege to build and ship.

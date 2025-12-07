@@ -33,7 +33,7 @@ const Contact = () => {
               Get In Touch
             </span>
             <h2 className="font-display text-4xl md:text-5xl font-bold mt-4 mb-6">
-              Let's Build Something <span className="text-gradient">Great</span>
+              Let's Build Something Great
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               I'm always looking to connect with and learn from people building in the SaaS space — 

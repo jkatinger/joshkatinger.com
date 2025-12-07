@@ -30,7 +30,7 @@ const About = () => {
               About Me
             </span>
             <h2 className="font-display text-4xl md:text-5xl font-bold mt-4 mb-6">
-              Crafting Products That <span className="text-gradient">Matter</span>
+              Crafting Products That Matter
             </h2>
           </div>
 
