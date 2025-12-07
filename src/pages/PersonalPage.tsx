@@ -62,7 +62,7 @@ const PersonalPage = () => {
           <div className="container mx-auto px-6">
             <div className="max-w-6xl mx-auto">
               {/* Photo Banner */}
-              <div className="mb-12 rounded-2xl overflow-hidden shadow-elevated">
+              <div className="mb-16 rounded-2xl overflow-hidden shadow-elevated">
                 <img 
                   src={aviationCollage} 
                   alt="Josh recording in the studio and flying in a T6 Texan WWII trainer" 
