@@ -88,8 +88,8 @@ const Projects = () => {
                 )}
 
                 {/* Content */}
-                <div className="space-y-4">
-                  <h3 className="font-display text-2xl font-bold group-hover:text-primary transition-colors">
+                <div className={`space-y-4 ${project.featured ? "pt-6 md:pt-0" : ""}`}>
+                  <h3 className="font-display text-2xl font-bold group-hover:text-primary transition-colors pr-20 md:pr-0">
                     {project.title}
                   </h3>
 
