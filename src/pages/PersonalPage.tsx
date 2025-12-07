@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { BookOpen, Headphones, Plane, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import aviationCollage from "@/assets/josh-aviation-collage.jpg";
 
 const PersonalPage = () => {
   const audiobooks = [
@@ -60,6 +61,15 @@ const PersonalPage = () => {
         <section className="py-24 md:py-32">
           <div className="container mx-auto px-6">
             <div className="max-w-6xl mx-auto">
+              {/* Photo Banner */}
+              <div className="mb-12 rounded-2xl overflow-hidden shadow-elevated">
+                <img 
+                  src={aviationCollage} 
+                  alt="Josh recording in the studio and flying in a T6 Texan WWII trainer" 
+                  className="w-full h-48 md:h-64 lg:h-80 object-cover object-top"
+                />
+              </div>
+
               {/* Section Header */}
               <div className="flex items-center gap-4 mb-12">
                 <div className="p-3 rounded-xl bg-primary/10">
