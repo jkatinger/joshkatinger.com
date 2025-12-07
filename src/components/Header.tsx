@@ -49,9 +49,9 @@ const Header = () => {
               <Link
                 key={link.href}
                 to={link.href}
-                className={`text-sm transition-colors duration-200 ${
+                className={`text-base font-semibold transition-colors duration-200 ${
                   isActive(link.href)
-                    ? "text-sky-400 font-medium"
+                    ? "text-sky-400"
                     : "text-zinc-300 hover:text-white"
                 }`}
               >
@@ -77,9 +77,9 @@ const Header = () => {
                 <Link
                   key={link.href}
                   to={link.href}
-                  className={`py-2 transition-colors ${
+                  className={`py-2 text-base font-semibold transition-colors ${
                     isActive(link.href)
-                      ? "text-sky-400 font-medium"
+                      ? "text-sky-400"
                       : "text-zinc-300 hover:text-white"
                   }`}
                   onClick={() => setIsMobileMenuOpen(false)}
