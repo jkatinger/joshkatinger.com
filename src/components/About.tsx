@@ -30,7 +30,7 @@ const About = () => {
               About Me
             </span>
             <h2 className="font-display text-4xl md:text-5xl font-bold mt-4 mb-6">
-              Crafting Products That Matter
+              Past, Present, and Future
             </h2>
           </div>
 
@@ -49,21 +49,23 @@ const About = () => {
             {/* Right: Content */}
             <div className="space-y-6">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                I'm a Principal Product Manager focused on building products that power 
-                business-critical workflows — from data infrastructure and integrations 
-                to intelligent document generation.
+                By day, I'm a Product Manager building the future — shaping SaaS platforms, 
+                APIs, and AI-driven workflows that help businesses move faster. By night 
+                (and most weekends), I'm a historian — researching, narrating, and preserving 
+                the stories of aviation legends who shaped our past.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                At Intellistack, I'm currently leading product strategy for data and integrations 
-                on the next-generation "Streamline" platform — a ground-up rebuild designed for 
-                scale, security, and extensibility. My work spans zero-data-retention integration 
-                architecture and iPaaS adoption to support a broader ecosystem of third-party tools.
+                It might seem like an odd pairing, but I've found they're deeply connected. 
+                Both require systems thinking — understanding how pieces fit together, whether 
+                it's an integration architecture or the chain of events that led to a historic 
+                mission. Both demand storytelling — translating complexity into something 
+                people can grasp and care about.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                My approach blends systems thinking, cross-functional collaboration, and a 
-                strong sense of customer value. I've worked extensively on both early-stage 
-                platform launches and established products — optimizing performance, expanding 
-                capabilities, and driving customer adoption.
+                I love living in multiple timelines. One moment I'm defining platform strategy 
+                for a next-gen product; the next, I'm behind a microphone bringing a WWII 
+                triple ace's memoir to life. The dichotomy keeps me curious, creative, and 
+                constantly learning.
               </p>
             </div>
           </div>
