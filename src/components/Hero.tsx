@@ -1,5 +1,4 @@
-import { Button } from "@/components/ui/button";
-import { ArrowDown, Linkedin, Mail } from "lucide-react";
+import { Linkedin, Mail } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -22,23 +21,20 @@ const Hero = () => {
           
           {/* Title */}
           <h2 className="text-xl md:text-2xl lg:text-3xl text-muted-foreground mb-8 animate-fade-up opacity-0 delay-300">
-            Software Product Manager
+            Software Product Manager and Aviation History Enthusiast
           </h2>
           
           {/* Description */}
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed animate-fade-up opacity-0 delay-400">
-            Building products that power business-critical workflows — from data infrastructure 
-            and integrations to intelligent document generation and AI-driven automation.
-          </p>
-          
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-fade-up opacity-0 delay-500">
-            <Button variant="hero" size="xl" asChild>
-              <a href="#projects">View My Work</a>
-            </Button>
-            <Button variant="outline" size="xl" asChild>
-              <a href="#contact">Get In Touch</a>
-            </Button>
+          <div className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed animate-fade-up opacity-0 delay-400">
+            <p className="mb-4">
+              I'm Josh — a product manager deep in the world of APIs, data, and AI. When I'm not doing that… I'm probably still at my desk, just time-traveling into aviation history instead of optimizing workflows. I love the dichotomy of moving between the past, present, and future.
+            </p>
+            <p>
+              This is my personal site where you can explore{" "}
+              <a href="/professional" className="text-primary hover:underline">what I build</a>,{" "}
+              <a href="/personal" className="text-primary hover:underline">what I obsess over</a>, and{" "}
+              <a href="/contact" className="text-primary hover:underline">reach out</a> if anything here sparks a conversation.
+            </p>
           </div>
           
           {/* Social Links */}
@@ -60,16 +56,6 @@ const Hero = () => {
           </div>
         </div>
         
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-fade-in delay-600">
-          <a
-            href="#about"
-            className="flex flex-col items-center text-muted-foreground hover:text-primary transition-colors"
-          >
-            <span className="text-sm mb-2">Scroll</span>
-            <ArrowDown size={20} className="animate-bounce" />
-          </a>
-        </div>
       </div>
     </section>
   );

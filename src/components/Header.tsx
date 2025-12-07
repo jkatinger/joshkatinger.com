@@ -58,9 +58,6 @@ const Header = () => {
                 {link.label}
               </Link>
             ))}
-            <Button variant="hero" size="sm">
-              Resume
-            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -90,9 +87,6 @@ const Header = () => {
                   {link.label}
                 </Link>
               ))}
-              <Button variant="hero" size="sm" className="w-fit mt-2">
-                Resume
-              </Button>
             </div>
           </div>
         )}
