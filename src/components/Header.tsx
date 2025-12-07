@@ -28,17 +28,17 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-zinc-900 ${
         isScrolled
-          ? "bg-background/80 backdrop-blur-lg border-b border-border"
-          : "bg-background/50 backdrop-blur-sm"
+          ? "border-b border-zinc-700"
+          : ""
       }`}
     >
       <div className="container mx-auto px-6">
         <nav className="flex items-center justify-between h-16 md:h-20">
           <Link
             to="/"
-            className="font-display text-xl font-bold text-foreground hover:text-primary transition-colors"
+            className="font-display text-xl font-bold text-white hover:text-primary transition-colors"
           >
             JK<span className="text-primary">.</span>
           </Link>
@@ -52,7 +52,7 @@ const Header = () => {
                 className={`text-sm transition-colors duration-200 ${
                   isActive(link.href)
                     ? "text-primary font-medium"
-                    : "text-muted-foreground hover:text-foreground"
+                    : "text-zinc-300 hover:text-white"
                 }`}
               >
                 {link.label}
@@ -62,7 +62,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-foreground"
+            className="md:hidden text-white"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -71,7 +71,7 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border animate-fade-in">
+          <div className="md:hidden py-4 border-t border-zinc-700 animate-fade-in">
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
                 <Link
@@ -80,7 +80,7 @@ const Header = () => {
                   className={`py-2 transition-colors ${
                     isActive(link.href)
                       ? "text-primary font-medium"
-                      : "text-muted-foreground hover:text-foreground"
+                      : "text-zinc-300 hover:text-white"
                   }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
