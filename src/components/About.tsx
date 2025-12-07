@@ -1,22 +1,22 @@
-import { Database, Workflow, Cpu } from "lucide-react";
+import { History, Cpu, BookOpen } from "lucide-react";
 import joshHeadshot from "@/assets/josh-headshot.jpeg";
 
 const About = () => {
   const highlights = [
     {
-      icon: Database,
-      title: "Data Infrastructure",
-      description: "Building scalable, secure data flows and integration patterns that power complex customer use cases.",
-    },
-    {
-      icon: Workflow,
-      title: "Business Automation",
-      description: "Driving intelligent document generation and workflow automation for enterprise customers.",
+      icon: History,
+      title: "Looking Back to Move Forward",
+      description: "I avoid repeating old mistakes by uncovering hidden assumptions in systems and spotting patterns others miss.",
     },
     {
       icon: Cpu,
-      title: "AI Integration",
-      description: "Defining platform-level requirements to enable AI-driven workflows with secure data handling.",
+      title: "Grounding Decisions in Reality",
+      description: "I bring clarity by understanding how we got here — the root cause, the story behind the data, the lessons learned.",
+    },
+    {
+      icon: BookOpen,
+      title: "Preserving Through Storytelling",
+      description: "I protect history from being lost — elevating voices that would otherwise fade and preserving meaning through narrative.",
     },
   ];
 
@@ -30,7 +30,7 @@ const About = () => {
               About Me
             </span>
             <h2 className="font-display text-4xl md:text-5xl font-bold mt-4 mb-6">
-              Past, Present, and Future
+              Context Is My Superpower
             </h2>
           </div>
 
@@ -49,30 +49,33 @@ const About = () => {
             {/* Right: Content */}
             <div className="space-y-6">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                By day, I'm a Product Manager building the future — shaping SaaS platforms, 
-                APIs, and AI-driven workflows that help businesses move faster. By night 
-                (and most weekends), I'm a historian — researching, narrating, and preserving 
-                the stories of aviation legends who shaped our past.
+                Years ago, I took the CliftonStrengths assessment — twice, because I didn't 
+                believe the first result. Both times, my leading strength came back as 
+                "Context." I had no idea what to do with it. It didn't sound as flashy as 
+                "Strategic" or "Communication." It sounded like someone politely calling me nostalgic.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                It might seem like an odd pairing, but I've found they're deeply connected. 
-                Both require systems thinking — understanding how pieces fit together, whether 
-                it's an integration architecture or the chain of events that led to a historic 
-                mission. Both demand storytelling — translating complexity into something 
-                people can grasp and care about.
+                Then it clicked. People with Context are wired to look backward in order to 
+                move forward. We make better decisions when we understand how we got here — 
+                the history, the root cause, the story behind the data. We ask: "What led to this? 
+                Has this happened before? What context is missing?"
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                I love living in multiple timelines. One moment I'm defining platform strategy 
-                for a next-gen product; the next, I'm behind a microphone bringing a WWII 
-                triple ace's memoir to life. The dichotomy keeps me curious, creative, and 
-                constantly learning.
+                Suddenly, my two seemingly unrelated passions made perfect sense. My obsession 
+                with WWII pilot memoirs. My love for first-person history. My product-management 
+                instinct to understand existing systems before changing them. They're not separate 
+                interests — they're the same cognitive strength expressed in two domains.
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed font-medium text-foreground">
+                I'm a storyteller because I'm a product manager with Context. I'm a strong 
+                product manager because I'm a storyteller with Context.
               </p>
             </div>
           </div>
 
           {/* Highlights Grid */}
           <div className="grid md:grid-cols-3 gap-6 mt-16">
-            {highlights.map((item, index) => (
+            {highlights.map((item) => (
               <div
                 key={item.title}
                 className="p-6 rounded-xl bg-gradient-card border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-glow group"
