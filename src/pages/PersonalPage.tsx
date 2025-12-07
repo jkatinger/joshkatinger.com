@@ -28,7 +28,7 @@ const PersonalPage = () => {
       author: "Col. Joseph A. Peterburs",
       description:
         "Completely revised, edited, and graphically redesigned this autobiography for Joe Peterburs, a WWII fighter pilot and life-long Air Force veteran.",
-      link: "",
+      link: "https://joepeterburs.com/",
       tags: ["WWII Aviation", "P-51 Mustang", "Air Force"],
       type: "book",
     },
@@ -127,7 +127,7 @@ const PersonalPage = () => {
                               target="_blank"
                               rel="noopener noreferrer"
                             >
-                              {book.type === "audiobook" ? "Listen on Amazon" : "View on Amazon"}
+                              {book.type === "audiobook" ? "Listen on Amazon" : "View Website"}
                               <ExternalLink className="w-4 h-4" />
                             </a>
                           </Button>
