@@ -36,7 +36,7 @@ const Header = () => {
             href="#"
             className="font-display text-xl font-bold text-foreground hover:text-primary transition-colors"
           >
-            JD<span className="text-primary">.</span>
+            JK<span className="text-primary">.</span>
           </a>
 
           {/* Desktop Navigation */}
