@@ -82,20 +82,8 @@ const PersonalPage = () => {
                     key={book.title}
                     className="group relative p-6 md:p-8 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all duration-300 shadow-card hover:shadow-elevated"
                   >
-                    {/* Type Badge */}
-                    <div className="absolute top-4 right-4 mb-4">
-                      <span className="px-3 py-1 text-xs font-medium bg-accent/20 text-accent rounded-full flex items-center gap-1">
-                        {book.type === "audiobook" ? (
-                          <Headphones className="w-3 h-3" />
-                        ) : (
-                          <BookOpen className="w-3 h-3" />
-                        )}
-                        {book.type === "audiobook" ? "Audiobook" : "Book"}
-                      </span>
-                    </div>
-
                     {/* Content */}
-                    <div className="space-y-4 pt-6">
+                    <div className="space-y-4">
                       <div className="flex items-start gap-4">
                         <div className="p-3 rounded-lg bg-primary/10 shrink-0">
                           {book.type === "audiobook" ? (
