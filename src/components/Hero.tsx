@@ -27,7 +27,7 @@ const Hero = () => {
           {/* Description */}
           <div className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed animate-fade-up opacity-0 delay-400">
             <p className="mb-4">
-              I'm Josh — a product manager deep in the world of APIs, data, and AI. When I'm not doing that… I'm probably still at my desk, just time-traveling into aviation history instead of optimizing workflows. I love the dichotomy of moving between the past, present, and future.
+              I'm a Product Manager working in the world of SaaS, APIs, data, and AI. When I'm not doing that… I'm probably still at my desk, just time-traveling into aviation history instead of optimizing workflows. I love the dichotomy of moving between the past, present, and future.
             </p>
             <p>
               This is my personal site where you can explore{" "}
