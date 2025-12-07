@@ -37,7 +37,8 @@ const Contact = () => {
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               I'm always looking to connect with and learn from people building in the SaaS space — 
-              especially where data flows, integration strategy, or document automation are central.
+              especially where data flows, integration strategy, or document automation are central. 
+              Fellow aviation history nerds are also always welcome.
             </p>
           </div>
 
