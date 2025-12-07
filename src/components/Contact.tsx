@@ -66,27 +66,8 @@ const Contact = () => {
                 </div>
               </a>
             ))}
-          </div>
-
-          {/* CTA */}
-          <div className="text-center p-8 md:p-12 rounded-2xl bg-gradient-card border border-border">
-            <h3 className="font-display text-2xl md:text-3xl font-bold mb-4">
-              Ready to start a project?
-            </h3>
-            <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-              I'm currently available for consulting, advisory roles, and speaking engagements. 
-              Let's discuss how I can help you achieve your product goals.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button variant="hero" size="lg" asChild>
-                <a href="mailto:josh@katinger.com">
-                  <Mail className="w-5 h-5 mr-2" />
-                  Send Me a Message
-                </a>
-              </Button>
-            </div>
-          </div>
         </div>
+      </div>
       </div>
     </section>
   );
