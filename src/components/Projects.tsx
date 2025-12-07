@@ -1,53 +1,52 @@
-import { ExternalLink, TrendingUp, Users, Zap } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { TrendingUp, Users, Zap, Shield } from "lucide-react";
 
 const Projects = () => {
   const projects = [
     {
-      title: "Real-Time Payment Platform",
+      title: "Streamline Platform - Data Fabric",
       description:
-        "Led the development of an instant payment system processing $50M+ monthly. Reduced transaction time from 3 days to seconds.",
-      tags: ["Fintech", "Payments", "API"],
+        "Led the development of a zero-data-retention-architecture platform for Intellistack, purpose-built for deep, secure, and scalable process automation in healthcare and regulated industries.",
+      tags: ["Data Infrastructure", "Healthcare", "Enterprise"],
       metrics: [
-        { icon: TrendingUp, value: "300%", label: "Volume Growth" },
-        { icon: Users, value: "200K+", label: "Active Users" },
-        { icon: Zap, value: "<1s", label: "Transaction Time" },
+        { icon: Shield, value: "Zero", label: "Data Retention" },
+        { icon: Users, value: "Enterprise", label: "Healthcare" },
+        { icon: Zap, value: "HIMSS 2025", label: "Launch" },
       ],
       featured: true,
     },
     {
-      title: "AI-Powered Fraud Detection",
+      title: "AI Document Template Generator",
       description:
-        "Shipped ML-based fraud detection that reduced fraudulent transactions by 85% while maintaining 99.9% approval rate for legitimate users.",
-      tags: ["AI/ML", "Security", "Risk"],
+        "Collaborated cross-functionally to launch Formstack's first AI-powered feature — an LLM-powered document template generator to accelerate onboarding and increase early product adoption.",
+      tags: ["AI/ML", "Document Automation", "LLM"],
       metrics: [
-        { icon: TrendingUp, value: "85%", label: "Fraud Reduction" },
-        { icon: Users, value: "99.9%", label: "Approval Rate" },
-        { icon: Zap, value: "50ms", label: "Detection Speed" },
+        { icon: TrendingUp, value: "21%", label: "of Global ARR" },
+        { icon: Users, value: "Faster", label: "Onboarding" },
+        { icon: Zap, value: "AI-First", label: "Feature" },
       ],
       featured: true,
     },
     {
-      title: "Developer API Platform",
+      title: "Arke Kafka Messaging Platform",
       description:
-        "Built a self-serve API platform from 0 to 1, enabling 1000+ developers to integrate payment capabilities into their applications.",
-      tags: ["API", "Developer Tools", "B2B"],
+        "Spearheaded the PM role at Zapier overseeing the Arke platform that synchronized customer data with third-party marketing tools including CRM, marketing automation, and in-product messaging.",
+      tags: ["Kafka", "CDP", "MarTech"],
       metrics: [
-        { icon: TrendingUp, value: "1000+", label: "Developers" },
-        { icon: Users, value: "50M", label: "API Calls/Month" },
-        { icon: Zap, value: "4.8/5", label: "Developer Rating" },
+        { icon: TrendingUp, value: "HTTP", label: "Connector" },
+        { icon: Users, value: "CDP", label: "Integration" },
+        { icon: Zap, value: "Event", label: "Driven" },
       ],
       featured: false,
     },
     {
-      title: "Customer Onboarding 2.0",
+      title: "Enterprise Admin Console for Google Analytics",
       description:
-        "Redesigned the onboarding experience, reducing time-to-value by 60% and improving activation rates through guided workflows.",
-      tags: ["UX", "Growth", "Onboarding"],
+        "Orchestrated the wireframing, prototyping, design, and launch of ShufflePoint's Enterprise Admin Console, surpassing Year-1 revenue targets with new query language features.",
+      tags: ["Analytics", "SaaS", "Enterprise"],
       metrics: [
-        { icon: TrendingUp, value: "60%", label: "Faster Activation" },
-        { icon: Users, value: "45%", label: "Conversion Lift" },
-        { icon: Zap, value: "35%", label: "Churn Reduction" },
+        { icon: TrendingUp, value: "Y1", label: "Targets Met" },
+        { icon: Users, value: "Enterprise", label: "Customers" },
+        { icon: Zap, value: "API", label: "Platform" },
       ],
       featured: false,
     },
@@ -66,7 +65,7 @@ const Projects = () => {
               Featured <span className="text-gradient">Projects</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              A selection of products I've had the privilege to build and ship.
+              A selection of impactful products I've had the privilege to build and ship.
             </p>
           </div>
 
@@ -126,13 +125,6 @@ const Projects = () => {
                       </div>
                     ))}
                   </div>
-                </div>
-
-                {/* Hover Link */}
-                <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <Button variant="ghost" size="icon">
-                    <ExternalLink className="w-5 h-5" />
-                  </Button>
                 </div>
               </div>
             ))}

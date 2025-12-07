@@ -1,39 +1,88 @@
 const Experience = () => {
   const experiences = [
     {
-      company: "FinFlow",
-      role: "Senior Product Manager",
-      period: "2021 - Present",
+      company: "Intellistack",
+      role: "Principal Product Manager - Data Infrastructure & Ecosystem",
+      period: "Oct 2025 - Present",
       description:
-        "Leading product strategy for the core payments platform, driving 45% YoY revenue growth. Shipped 15+ major features including real-time payments and fraud detection.",
+        "Leading the cross-platform data infrastructure strategy: building scalable, secure data flows and integration patterns that power customer use cases across enterprise healthcare and regulated industries.",
       achievements: [
-        "Scaled platform from 10K to 500K+ active users",
-        "Led cross-functional team of 12 engineers and 3 designers",
-        "Reduced customer churn by 35% through improved onboarding",
+        "Driving the post-MVP growth of Intellistack's Streamline platform into a secure, scalable automation backbone",
+        "Partnering with executive leadership on platform strategy and go-to-market planning",
+        "Defining platform-level requirements to enable AI-driven workflows with secure data handling",
+        "Awarded Most Significant Contribution - Product & Engineering, 2024",
       ],
     },
     {
-      company: "TechCorp",
+      company: "Intellistack",
+      role: "Senior Product Manager - Data & Integrations",
+      period: "Nov 2024 - Oct 2025",
+      description:
+        "Led the development of the Data Fabric for the next-generation 'Streamline' platform - a zero-data-retention-architecture platform, purpose-built for deep, secure, and scalable process automation.",
+      achievements: [
+        "Drove integration strategy from complex custom data integrations to event-driven iPaaS workflows",
+        "Partnered with engineering and design to deliver platform MVP and launch at HIMSS 2025",
+        "Translated enterprise integration needs into platform-level architecture",
+      ],
+    },
+    {
+      company: "Intellistack (Formstack)",
+      role: "Senior Product Manager - Document Generation",
+      period: "Jun 2024 - Oct 2024",
+      description:
+        "Collaborated cross-functionally to launch Formstack's first AI-powered feature — an AI Document Template Generator powered by an LLM to accelerate onboarding and increase early product adoption.",
+      achievements: [
+        "Managed Document Generation product line (~21% of global ARR)",
+        "Reoriented product roadmap to align with strategic corporate objectives",
+        "Instituted customer listening program to inform strategic roadmap",
+      ],
+    },
+    {
+      company: "Zapier",
       role: "Product Manager",
-      period: "2018 - 2021",
+      period: "Jun 2022 - Jul 2023",
       description:
-        "Owned the B2B SaaS product suite, managing a $15M ARR portfolio. Launched enterprise features that increased deal sizes by 60%.",
+        "Spearheaded the introduction of the PM role within the Marketing Operations Engineering team, overseeing the Arke Kafka Messaging platform that synchronized customer data with third-party marketing tools.",
       achievements: [
-        "Drove product-led growth strategy with 40% conversion lift",
-        "Built and launched API platform serving 1000+ developers",
-        "Established product discovery framework adopted company-wide",
+        "Led cross-functional steering committee that selected and integrated a Customer Data Platform (CDP)",
+        "Orchestrated successful rollout of the 'HTTP Connector' bridging Kafka event stream with CDP",
+        "Shifted team focus to outcome-driven approach with product-focused KPIs",
       ],
     },
     {
-      company: "StartupX",
-      role: "Associate Product Manager",
-      period: "2016 - 2018",
+      company: "Merkle | Cardinal Path",
+      role: "Director Of Business Development",
+      period: "Jan 2020 - May 2022",
       description:
-        "First PM hire, built the product function from the ground up. Helped take the product from MVP to Series A with 50K users.",
+        "Supported the acquisition of E-Nor by Merkle | Cardinal Path, a marketing data and analytics consultancy. Established sales operations and managed enterprise software relationships.",
       achievements: [
-        "Defined product roadmap that secured $5M Series A funding",
-        "Implemented agile methodologies and OKR framework",
-        "Conducted 200+ user interviews to drive product decisions",
+        "Established sales operations team managing $14M in annual software license renewals",
+        "Made significant contributions to establish premier Google partnership",
+        "Directed go-to-market strategies for Enterprise Analytics University",
+      ],
+    },
+    {
+      company: "E-Nor",
+      role: "VP Sales and Marketing",
+      period: "Jan 2017 - Dec 2019",
+      description:
+        "Led marketing team for global digital analytics and marketing optimization consulting firm. Promoted SaaS analytics product, web-based training platform and consulting services.",
+      achievements: [
+        "Oversaw go-to-market efforts for Enterprise Analytics University (EAU)",
+        "Assumed P&L responsibility for consolidated Sales and Marketing team",
+        "Assisted CEO in preparations for and execution of sale to Dentsu Network",
+      ],
+    },
+    {
+      company: "ShufflePoint, Inc.",
+      role: "Product Manager & Partner",
+      period: "Jan 2014 - Dec 2016",
+      description:
+        "Developed and executed product strategy for an API-powered SaaS platform enabling automated data imports from various marketing tools.",
+      achievements: [
+        "Managed feature roadmap incorporating customer feedback and prioritizing by business impact",
+        "Orchestrated wireframing, prototyping, and launch of Enterprise Admin Console for Google Analytics",
+        "Surpassed Year-1 revenue targets with new query language features",
       ],
     },
   ];
@@ -51,7 +100,7 @@ const Experience = () => {
               Professional <span className="text-gradient">Experience</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              A journey of building products, leading teams, and driving impact at every stage.
+              14+ years building products, leading teams, and driving impact across SaaS platforms.
             </p>
           </div>
 
@@ -62,7 +111,7 @@ const Experience = () => {
 
             {experiences.map((exp, index) => (
               <div
-                key={exp.company}
+                key={`${exp.company}-${exp.role}`}
                 className={`relative mb-12 last:mb-0 ${
                   index % 2 === 0 ? "md:pr-12 md:text-right" : "md:pl-12 md:ml-auto"
                 } md:w-1/2 pl-8 md:pl-0`}
@@ -82,11 +131,11 @@ const Experience = () => {
                     <span className="text-accent font-medium text-sm">
                       {exp.period}
                     </span>
-                    <h3 className="font-display text-2xl font-bold mt-1">
+                    <h3 className="font-display text-xl font-bold mt-1">
                       {exp.role}
                     </h3>
                     <p className="text-primary font-medium">{exp.company}</p>
-                    <p className="text-muted-foreground mt-4 text-left">
+                    <p className="text-muted-foreground mt-4 text-left text-sm">
                       {exp.description}
                     </p>
 

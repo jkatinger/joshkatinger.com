@@ -4,44 +4,44 @@ const Skills = () => {
       title: "Product Strategy",
       skills: [
         "Product Vision & Roadmapping",
-        "Market Research & Analysis",
-        "Competitive Intelligence",
+        "Product Lifecycle Management",
         "Go-to-Market Strategy",
-        "Pricing & Monetization",
+        "Platform Architecture",
+        "Data Infrastructure Design",
         "OKRs & KPIs",
       ],
     },
     {
-      title: "Product Discovery",
+      title: "Integration & Data",
       skills: [
-        "User Research & Interviews",
-        "Jobs-to-be-Done Framework",
-        "Customer Journey Mapping",
-        "A/B Testing & Experimentation",
-        "Data Analysis & SQL",
-        "Product Analytics",
-      ],
-    },
-    {
-      title: "Product Delivery",
-      skills: [
-        "Agile & Scrum Methodologies",
-        "Sprint Planning & Estimation",
-        "Technical Requirements",
         "API & Integration Design",
-        "Launch Management",
-        "Stakeholder Communication",
+        "iPaaS Workflows",
+        "Data Fabric Architecture",
+        "Kafka & Event-Driven Systems",
+        "Customer Data Platforms",
+        "Zero-Data-Retention Design",
       ],
     },
     {
-      title: "Tools & Platforms",
+      title: "AI & Automation",
       skills: [
-        "Jira, Linear, Notion",
-        "Figma, Miro, FigJam",
-        "Amplitude, Mixpanel",
-        "SQL, Python Basics",
-        "Postman, Swagger",
-        "Slack, Loom, Confluence",
+        "AI-Powered Workflows",
+        "Document Automation",
+        "LLM Integration",
+        "Process Automation",
+        "Intelligent Onboarding",
+        "Secure Data Handling",
+      ],
+    },
+    {
+      title: "Tools & Methods",
+      skills: [
+        "Agile & Scrum (CSPO)",
+        "Cross-Functional Leadership",
+        "Enterprise Sales Enablement",
+        "User Research & Discovery",
+        "ProductBoard",
+        "Stakeholder Management",
       ],
     },
   ];
@@ -59,7 +59,7 @@ const Skills = () => {
               Skills & <span className="text-gradient">Capabilities</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              A comprehensive toolkit for building and scaling successful products.
+              A comprehensive toolkit for building and scaling SaaS platforms in data, integrations, and automation.
             </p>
           </div>
 
@@ -91,10 +91,10 @@ const Skills = () => {
           {/* Stats Row */}
           <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { value: "8+", label: "Years Experience" },
-              { value: "15+", label: "Products Shipped" },
-              { value: "500K+", label: "Users Impacted" },
-              { value: "$50M+", label: "Revenue Generated" },
+              { value: "14+", label: "Years Experience" },
+              { value: "10+", label: "Products Shipped" },
+              { value: "21%", label: "ARR Managed" },
+              { value: "$14M+", label: "License Renewals" },
             ].map((stat) => (
               <div
                 key={stat.label}
@@ -106,6 +106,22 @@ const Skills = () => {
                 <div className="text-sm text-muted-foreground">{stat.label}</div>
               </div>
             ))}
+          </div>
+
+          {/* Certifications */}
+          <div className="mt-12 text-center">
+            <h3 className="font-display text-xl font-semibold mb-4">Certifications</h3>
+            <div className="flex flex-wrap justify-center gap-4">
+              <span className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium">
+                Certified Scrum Product Owner (CSPO)
+              </span>
+              <span className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium">
+                AI Summer 2025 Certificate
+              </span>
+              <span className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium">
+                Reforge Product Management Foundations
+              </span>
+            </div>
           </div>
         </div>
       </div>

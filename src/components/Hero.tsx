@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Linkedin, Github, Mail } from "lucide-react";
+import { ArrowDown, Linkedin, Mail } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -17,35 +17,35 @@ const Hero = () => {
           
           {/* Name */}
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fade-up opacity-0 delay-200">
-            <span className="text-foreground">James</span>{" "}
-            <span className="text-gradient">Davidson</span>
+            <span className="text-foreground">Josh</span>{" "}
+            <span className="text-gradient">Katinger</span>
           </h1>
           
           {/* Title */}
           <h2 className="text-xl md:text-2xl lg:text-3xl text-muted-foreground mb-8 animate-fade-up opacity-0 delay-300">
-            Senior Product Manager
+            Software Product Manager
           </h2>
           
           {/* Description */}
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed animate-fade-up opacity-0 delay-400">
-            Building impactful products at the intersection of technology and user experience. 
-            8+ years transforming ideas into successful digital products that users love.
+            Building products that power business-critical workflows — from data infrastructure 
+            and integrations to intelligent document generation and AI-driven automation.
           </p>
           
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-fade-up opacity-0 delay-500">
-            <Button variant="hero" size="xl">
-              View My Work
+            <Button variant="hero" size="xl" asChild>
+              <a href="#projects">View My Work</a>
             </Button>
-            <Button variant="outline" size="xl">
-              Get In Touch
+            <Button variant="outline" size="xl" asChild>
+              <a href="#contact">Get In Touch</a>
             </Button>
           </div>
           
           {/* Social Links */}
           <div className="flex items-center justify-center gap-6 animate-fade-up opacity-0 delay-600">
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/josh-katinger/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors duration-200"
@@ -53,15 +53,7 @@ const Hero = () => {
               <Linkedin size={24} />
             </a>
             <a
-              href="https://github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors duration-200"
-            >
-              <Github size={24} />
-            </a>
-            <a
-              href="mailto:james@example.com"
+              href="mailto:jkatinger@gmail.com"
               className="text-muted-foreground hover:text-primary transition-colors duration-200"
             >
               <Mail size={24} />
