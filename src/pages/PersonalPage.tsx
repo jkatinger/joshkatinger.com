@@ -66,7 +66,7 @@ const PersonalPage = () => {
                 <img 
                   src={aviationCollage} 
                   alt="Josh recording in the studio and flying in a T6 Texan WWII trainer" 
-                  className="w-full h-48 md:h-64 lg:h-80 object-cover object-top"
+                  className="w-full h-48 md:h-64 lg:h-80 object-cover object-center"
                 />
               </div>
 
