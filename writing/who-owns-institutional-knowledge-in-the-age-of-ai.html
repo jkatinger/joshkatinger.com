@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SRWHNCQDZ5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SRWHNCQDZ5');
+  </script>
+  
+  <title>Who Owns Institutional Knowledge in the Age of AI? | Josh Katinger</title>
+  <meta name="description" content="A working argument from Josh Katinger on company-owned knowledge bases, AI harness memory, and where institutional knowledge should live.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+  
+  <link rel="icon" href="../favicon.png" type="image/png">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="../" class="logo">JK<span class="logo-dot">.</span></a>
+        
+        <div class="nav-links">
+          <a href="../about.html" class="nav-link">About</a>
+          <a href="../professional.html" class="nav-link">Professional</a>
+          <a href="../personal.html" class="nav-link">Personal</a>
+          <a href="../writing.html" class="nav-link active">Writing</a>
+          <a href="../contact.html" class="nav-link">Contact</a>
+        </div>
+        
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
+          <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" x2="20" y1="12" y2="12"></line>
+            <line x1="4" x2="20" y1="6" y2="6"></line>
+            <line x1="4" x2="20" y1="18" y2="18"></line>
+          </svg>
+          <svg id="close-icon" style="display: none;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 6 6 18"></path>
+            <path d="m6 6 12 12"></path>
+          </svg>
+        </button>
+      </nav>
+      
+      <div class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-links">
+          <a href="../about.html" class="mobile-nav-link">About</a>
+          <a href="../professional.html" class="mobile-nav-link">Professional</a>
+          <a href="../personal.html" class="mobile-nav-link">Personal</a>
+          <a href="../writing.html" class="mobile-nav-link active">Writing</a>
+          <a href="../contact.html" class="mobile-nav-link">Contact</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <article class="post-detail">
+      <header class="post-hero section-subtle">
+        <div class="container">
+          <a href="../writing.html" class="back-link">Writing archive</a>
+          <div class="post-detail-meta">
+            <time datetime="2026-05-25">May 25, 2026</time>
+            <span>14 min read</span>
+          </div>
+          <h1 class="post-detail-title">Who Owns Institutional Knowledge in the Age of AI?</h1>
+          <p class="post-detail-subtitle">Text-file AI operating systems are having a moment. I think the more durable term for companies may be knowledge base.</p>
+        </div>
+      </header>
+
+      <div class="container">
+        <div class="post-content">
+          <p class="post-lede">Lately I've been building little operating systems out of text files. Maybe that sounds more dramatic than it is. In practice, it means folders full of Markdown, JSON ledgers, decision logs, meeting notes, source maps, task backlogs, and instruction files that tell an AI agent how to work inside that folder without making a mess of things...or as little mess as possible.</p>
+
+          <p>It also, occasionally, is just me arguing with a generated <code>README.md</code> at 11:30 at night because the agent keeps treating a meeting note like a roadmap. The future remains stupid in very specific ways.</p>
+
+          <p>The basic pattern is real, though. I have been using this approach in my own Obsidian vault for work, career, personal systems, professional writing, and task management. The useful part is not that the files are Markdown. Markdown is just the boring little miracle that makes the whole thing portable. The useful part is that the files create a shared operating surface: a place where humans and AI tools can both see the same context, update the same artifacts, and pick up where the last session left off.</p>
+
+          <p>I am clearly not the only person circling this.</p>
+
+          <p><a href="https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f" target="_blank" rel="noopener noreferrer">Andrej Karpathy's LLM Wiki</a> describes a three-layer pattern: raw sources, an LLM-maintained wiki, and a schema file that tells the agent how to maintain it. <a href="https://github.com/gnekt/My-Brain-Is-Full-Crew" target="_blank" rel="noopener noreferrer">My Brain Is Full Crew</a> turns an Obsidian vault into a coordinated set of agents and skills. <a href="https://github.com/amanaiproduct/personal-os" target="_blank" rel="noopener noreferrer">PersonalOS</a> is a local AI-powered task management framework built around files like <code>BACKLOG.md</code>, <code>GOALS.md</code>, and <code>AGENTS.md</code>. <a href="https://github.com/davekilleen/dex" target="_blank" rel="noopener noreferrer">Dex</a>, built by <a href="https://www.linkedin.com/in/davekilleen/" target="_blank" rel="noopener noreferrer">Dave Killeen</a>, packages a personal AI Chief of Staff around Claude Code, hooks, skills, MCP, and a role-adaptive file system. <a href="https://www.kieranflanagan.io/" target="_blank" rel="noopener noreferrer">Kieran Flanagan</a> wrote about his <a href="https://www.kieranflanagan.io/p/i-built-an-ai-second-brain-its-made" target="_blank" rel="noopener noreferrer">AI Second Brain</a>, built on Obsidian plus Claude Code. <a href="https://www.linkedin.com/in/talsraviv/" target="_blank" rel="noopener noreferrer">Tal Raviv</a>, in <a href="https://www.talraviv.co/p/i-dont-know-what-build-an-agent-means" target="_blank" rel="noopener noreferrer">"I don't know what 'build an agent' means"</a>, cuts through the fog and basically says: stop mystifying this. Agents are chat threads, tools, skills, filesystems, triggers, and sometimes subagents.</p>
+
+          <p>The market seems to be reaching for the phrase "AI OS" to describe this stuff. I get why. It sounds bigger than "folder full of Markdown files." It gestures at something real: a set of instructions, workflows, memory, tools, and context that an AI system can operate within.</p>
+
+          <p>I also kind of hate that term.</p>
+
+          <p>"OS" already means something. Windows is an OS. macOS is an OS. Linux is an OS. Calling a Markdown knowledge corpus an OS risks making a fuzzy space fuzzier, which is exactly what AI discourse needs more of, apparently.</p>
+
+          <p>In my own work, I have been moving toward a simpler term: <strong>knowledge base</strong>, or KB. Not because it is trendier. It is not. It is aggressively unsexy. But it says the important thing: this is the <strong>company-owned</strong> body of context, evidence, decisions, instructions, and operating memory that other tools should read from and write back to.</p>
+
+          <p>So for the rest of this piece, I am going to use "KB." The market may keep saying "AI OS." Fine. I will survive. But if I am trying to help a team build something durable, I would rather start with the less confusing term.</p>
+
+          <p>The question I am working through now is not "what should the folder structure be?"</p>
+
+          <p>It is: <strong>where does this KB fit in the AI stack, especially as every harness starts adding memory of its own?</strong></p>
+
+          <h2>The Simple Stack</h2>
+
+          <p>Here is the simplest version of the stack I keep coming back to:</p>
+
+          <figure class="post-figure post-figure-wide">
+            <img src="../assets/one-off-ai-artifacts-to-compounding-kb.png" alt="Diagram comparing one-off AI artifact workflows with a compounding company knowledge base workflow.">
+          </figure>
+
+          <p>This is intentionally too simple. Real systems have evals, observability, approvals, identity, permissions, embeddings, graph layers, connectors, policy enforcement, and more.</p>
+
+          <p>But this version is enough to expose the question: what is the company-owned memory layer, and what is just a convenience layer inside the tool you happen to be using?</p>
+
+          <p>My current answer, based on what I am learning in my own work, is this:</p>
+
+          <blockquote>The KB owns institutional truth. The harness owns local recall.</blockquote>
+
+          <p>Or, in a slightly more technical phrasing:</p>
+
+          <blockquote>The KB is the corpus. Harness memory is a cache.</blockquote>
+
+          <p>I do not mean that as a final answer carved into a stone tablet. This is where my thinking is today. It will probably change as the tools change, as the patterns mature, and as I keep watching these systems fail in new and interesting ways. But the boundary has been useful so far.</p>
+
+          <h2>The Harness Wants To Remember You</h2>
+
+          <p>By necessity, every serious AI harness has memory. If the harness cannot remember your preferences, your project conventions, your prior corrections, or the fact that you hate giant explanatory preambles before simple answers, it becomes exhausting to use.</p>
+
+          <p>Codex, for example, has a surprisingly legible memory architecture. Its memory pipeline is described in the open-source Codex repo: a startup memory process runs for eligible sessions, extracts structured memories from recent "rollouts," writes compact rollout summaries, and consolidates those into filesystem memory artifacts such as <code>raw_memories.md</code>, <code>rollout_summaries/</code>, <code>MEMORY.md</code>, and <code>memory_summary.md</code>. In my local Codex setup, I can inspect these files directly. <code>memory_summary.md</code> is the compact startup brief. <code>MEMORY.md</code> is the larger searchable index. <code>rollout_summaries/</code> contains the receipts: post-run summaries with task outcomes, reusable learnings, and failure modes.</p>
+
+          <p>That is useful. It is also clearly <strong>harness memory</strong>.</p>
+
+          <p>Claude Code makes a related distinction. Its docs separate <code>CLAUDE.md</code> files, which humans write as persistent project instructions, from auto memory, which Claude writes from corrections and learned patterns. ChatGPT Projects have their own project-scoped memory model. MCP, the Model Context Protocol, points in another direction entirely: a standard way for AI hosts to reach external tools, resources, and prompts.</p>
+
+          <p>The industry is not blind to the distinction. The distinction is emerging all over the place. What is not settled is the boundary between company-owned context and tool-owned memory.</p>
+
+          <p>Every vendor benefits when its harness feels like "the one that knows me." Good memory makes the tool better. It also makes the tool stickier. From the company's point of view, there is a difference between useful personalization and letting the harness become the only place important working context lives.</p>
+
+          <p>That is the line I am trying to watch.</p>
+
+          <h2>Cache vs Corpus</h2>
+
+          <p>Here is the boundary that is evolving in my current work.</p>
+
+          <p>If a customer discovery insight changes your roadmap, that belongs in the KB. If a support thread reveals a recurring implementation failure, that belongs in the KB. If a pricing decision was made, reversed, and then made again after a painful executive meeting, that belongs in the KB too, along with enough context that the next person does not confidently resurrect the losing argument six months later.</p>
+
+          <p>If your AI harness learns that you prefer concise status updates, that belongs in harness memory. If it learns that a specific repo needs tests to run through a wrapper, harness memory can remember the shortcut, but the command itself should live in the repo instructions. If it learns that a folder has a startup file and a source hierarchy, harness memory can remember where to start, but the operating contract belongs in the folder.</p>
+
+          <p>The harness should remember how to find the source of truth. It should not quietly become the source of truth.</p>
+
+          <p>For a company, the shared KB should hold anything that needs to survive the tool, the employee, and the quarter: product strategy, customer research, evidence chains, decisions, reversals, roadmap context, operating workflows, project briefs, market research, implementation notes, governance rules, and the instructions any capable harness should be able to read.</p>
+
+          <p>Harness memory should hold the things that make a tool faster and less annoying for a particular user or environment: preferences, shortcuts, routing hints, recent corrections, local paths, and reminders about how the user likes to work.</p>
+
+          <p>The highest-value harness memories are pointers back to the KB. "For public writing, read this voice guide." "For backlog grooming, use this work-management tool." "For this repo, start with these instructions." That kind of memory helps the model get oriented faster without creating a hidden fork of the company's operating context.</p>
+
+          <h2>Why This Matters</h2>
+
+          <p>This matters to anyone doing serious AI-assisted work: product managers, operators, researchers, engineers, founders, designers, GTM leaders, analysts, consultants, and all the people currently trying to turn chat windows into something closer to a durable workflow.</p>
+
+          <p>Memory shapes what the model can see, reuse, and act on without the human rebuilding context by hand. If an AI workflow can carry forward prior decisions, it starts to feel like collaboration. If it cannot, it feels like working with a very smart intern with no notebook. Useful, but exhausting.</p>
+
+          <p>Shared and inspectable memory gives the team leverage. Private and hidden memory gives one person leverage. Vendor-tied memory raises switching costs. Portable memory lets teams move between harnesses and tools as the market changes.</p>
+
+          <p>And the market is absolutely going to change. Today's favorite harness may not be tomorrow's. Models will change. Enterprise permissions will change. <a href="https://medium.com/vibe-coding/claude-code-price-hike-finally-feels-like-a-relief-619245e5674e" target="_blank" rel="noopener noreferrer">Pricing will change</a>. Security reviews will change. Someone in procurement will discover a clause they do not like and suddenly your whole AI workflow will need a Plan B.</p>
+
+          <p>If your company memory lives in a portable KB, that is annoying.</p>
+
+          <p>If your company memory lives only in the harness, that is a real problem.</p>
+
+          <p>The value here is not just "the AI gives better answers." The value is that the company becomes harder to reset. Employee leaves? The context does not leave with them. Tool changes? The corpus is still there. New teammate joins? They can learn from decisions and evidence, not just vibes and a few heroic Slack archaeologists.</p>
+
+          <p>This is where text files are weirdly powerful. They are boring, portable, diffable, searchable, reviewable, and easy for multiple tools to consume. A Markdown folder does not care whether you open it from Codex, Claude Code, Cursor, Obsidian, VS Code, or whatever AI workbench gets funded next.</p>
+
+          <p>That is not a small thing.</p>
+
+          <h2>The Risks Are Real</h2>
+
+          <p>I do not want to pretend this is all upside.</p>
+
+          <p>A compact, well-maintained KB is valuable because it concentrates context. That also makes it dangerous. If someone can steal it, they are not just stealing documents. They are stealing the company's current best understanding of customers, strategy, constraints, decisions, and how work actually gets done.</p>
+
+          <p>The old world leaked docs. The new world can leak compressed institutional judgment. Permissions, provenance, audit logs, redaction, and access boundaries are not enterprise theater. They are part of whether this system can be trusted.</p>
+
+          <p>There is another uncomfortable thing here too. When we talk about "capturing institutional knowledge," we are often talking about extracting knowledge that used to live in employees' heads. That can be good. It prevents fragile hero systems. It guards against the <a href="https://en.wikipedia.org/wiki/Bus_factor" target="_blank" rel="noopener noreferrer">bus/lottery factor</a>. It makes onboarding less awful. It makes companies less dependent on the one person who knows where the bodies are buried in Jira.</p>
+
+          <p>But let's be real... if a company successfully codifies more of what only experienced employees used to know, some leaders will ask whether they need as many of those employees.</p>
+
+          <p>That fear is not irrational. It is one of the stakes.</p>
+
+          <p>My current view is that pretending the fear is fake makes the technology conversation worse. The better answer is to design these systems so they increase the leverage of expert employees instead of quietly turning them into training data for their own replacement. That means human review, attribution, visible expertise, and governance that treats the KB as a shared operating asset rather than an extraction machine.</p>
+
+          <p>Maybe that sounds naive. Or maybe it is just practical: if people do not trust the system, they will route around it, starve it, poison it, or perform for it. Then your beautiful AI OS becomes another corporate knowledge management project, which is to say, a place where PDFs go to die.</p>
+
+          <h2>My Working Rules, For Now</h2>
+
+          <p>These are not laws. They are the rules that are helping me think clearly at this stage:</p>
+
+          <ol>
+            <li>If another person or another harness needs it, put it in the KB.</li>
+            <li>If it is a preference, shortcut, or routing hint, harness memory is probably fine.</li>
+            <li>If it changes strategy, customer understanding, commitments, or operating cadence, it belongs in the shared corpus.</li>
+            <li>If the harness learns something durable, promote it back into the KB.</li>
+            <li>If the KB and harness memory disagree, the KB wins until a human updates it.</li>
+            <li>If a memory cannot be inspected, corrected, exported, or governed, do not treat it as institutional truth.</li>
+            <li>Decide deliberately where truth lives. Do not let the chat history win because it was convenient.</li>
+          </ol>
+
+          <p>That last one is probably the whole post.</p>
+
+          <h2>Where This Could Go</h2>
+
+          <p>I think the next interesting layer is the corporate KB becoming a living operating layer: not a dumping ground, not a stale internal wiki everyone feels bad about ignoring, and not an internal search box with a chatbot bolted on top. A real operating layer should know the source hierarchy, know what changed, know what needs review, know which claims are stale, know which decisions are still open, and help a team act without reassembling context from scratch every Monday.</p>
+
+          <p>For people building AI workflows, this is a strange and useful moment. We are used to thinking about interfaces as screens, workflows, APIs, onboarding paths, dashboards, and admin panels. But in AI systems, the context layer is becoming part of the interface. The structure of the KB determines what the model can understand, what it can safely do, and whether the team can trust the output.</p>
+
+          <p>The harness should help the model work faster in the moment. The KB should help the company remember over time.</p>
+
+          <p>If we blur those two, we get convenience now and lock-in later. That feels like exactly the kind of tradeoff worth catching early, while the pattern is still soft enough to change.</p>
+
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">JK<span class="footer-logo-dot">.</span></div>
+        <p class="footer-copyright">© 2026 Josh Katinger. All rights reserved.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/josh-katinger/" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect width="4" height="12" x="2" y="9"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+          <a href="mailto:josh@katinger.com" class="footer-social-link" aria-label="Email">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
