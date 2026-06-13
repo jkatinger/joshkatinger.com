@@ -1486,3 +1486,193 @@ main {
   white-space: nowrap;
   border: 0;
 }
+
+/* ===== PRINT ===== */
+@page {
+  margin: 0.7in 0.75in 0.8in;
+}
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 11pt;
+    line-height: 1.55;
+  }
+
+  .header,
+  .footer,
+  .back-link,
+  .mobile-menu-btn,
+  .btn,
+  .post-card-link,
+  .footer-social {
+    display: none !important;
+  }
+
+  main {
+    padding-top: 0 !important;
+  }
+
+  .container,
+  .post-hero .container,
+  .post-content {
+    max-width: none;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .section,
+  .section-subtle,
+  .post-hero,
+  .post-content {
+    background: white !important;
+  }
+
+  .post-hero {
+    padding: 0 0 0.3in;
+    border-bottom: 1pt solid #999;
+  }
+
+  .post-detail-meta {
+    color: #555 !important;
+    font-family: Arial, sans-serif;
+    font-size: 8.5pt;
+    letter-spacing: 0.02em;
+    margin-bottom: 0.1in;
+  }
+
+  .post-detail-title,
+  .post-detail-subtitle,
+  .post-content h2,
+  .post-content h3 {
+    color: black !important;
+    font-family: Arial, sans-serif;
+  }
+
+  .post-detail-title {
+    font-size: 25pt;
+    line-height: 1.12;
+    margin-top: 0;
+  }
+
+  .post-detail-subtitle {
+    color: #444 !important;
+    font-size: 12pt;
+    line-height: 1.4;
+    margin-top: 0.12in;
+  }
+
+  .post-content {
+    margin: 0;
+    padding: 0.25in 0 0;
+  }
+
+  .post-content p,
+  .post-content ol,
+  .post-content ul {
+    color: black !important;
+    font-size: 11pt;
+    line-height: 1.55;
+  }
+
+  .post-content p {
+    margin-bottom: 0.14in;
+    orphans: 3;
+    widows: 3;
+  }
+
+  .post-content .post-lede {
+    color: black !important;
+    font-size: 12pt;
+    line-height: 1.55;
+  }
+
+  .post-content h2 {
+    break-after: avoid-page;
+    font-size: 16pt;
+    margin: 0.3in 0 0.12in;
+  }
+
+  .post-content h3 {
+    break-after: avoid-page;
+    font-size: 12pt;
+    margin: 0.22in 0 0.08in;
+  }
+
+  .post-content ol,
+  .post-content ul {
+    margin: 0 0 0.16in 0.25in;
+  }
+
+  .post-content li {
+    break-inside: avoid;
+    margin-bottom: 0.06in;
+  }
+
+  .post-content blockquote {
+    break-inside: avoid;
+    background: #f2f2f2 !important;
+    border: 1pt solid #bbb;
+    border-left: 3pt solid #555;
+    color: black !important;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 11pt;
+    line-height: 1.5;
+    margin: 0.2in 0;
+    padding: 0.14in 0.18in;
+  }
+
+  .post-content a {
+    color: black !important;
+    font-weight: inherit;
+    text-decoration: underline;
+  }
+
+  .post-content code {
+    background: #eee !important;
+    border: 1pt solid #ccc;
+    color: black !important;
+  }
+
+  .post-figure,
+  .post-figure-wide,
+  figure,
+  img {
+    break-inside: avoid;
+    max-width: 100% !important;
+    transform: none !important;
+  }
+
+  .post-figure,
+  .post-figure-wide {
+    margin: 0.2in 0;
+    width: 100% !important;
+  }
+
+  a,
+  blockquote,
+  figure,
+  h1,
+  h2,
+  h3,
+  img,
+  li,
+  pre,
+  table {
+    break-inside: avoid;
+  }
+}
