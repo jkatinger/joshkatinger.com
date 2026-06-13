@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SRWHNCQDZ5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SRWHNCQDZ5');
+  </script>
+  
+  <title>So You Want to Integrate Your SaaS with Google &amp; Microsoft? | Josh Katinger</title>
+  <meta name="description" content="A cautionary field guide for product teams integrating SaaS products with Google and Microsoft, covering certification, OAuth scopes, iPaaS limits, and customer migration.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+  
+  <link rel="icon" href="../favicon.png" type="image/png">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="../" class="logo">JK<span class="logo-dot">.</span></a>
+        
+        <div class="nav-links">
+          <a href="../about.html" class="nav-link">About</a>
+          <a href="../professional.html" class="nav-link">Professional</a>
+          <a href="../personal.html" class="nav-link">Personal</a>
+          <a href="../writing.html" class="nav-link active">Writing</a>
+          <a href="../contact.html" class="nav-link">Contact</a>
+        </div>
+        
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
+          <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" x2="20" y1="12" y2="12"></line>
+            <line x1="4" x2="20" y1="6" y2="6"></line>
+            <line x1="4" x2="20" y1="18" y2="18"></line>
+          </svg>
+          <svg id="close-icon" style="display: none;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 6 6 18"></path>
+            <path d="m6 6 12 12"></path>
+          </svg>
+        </button>
+      </nav>
+      
+      <div class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-links">
+          <a href="../about.html" class="mobile-nav-link">About</a>
+          <a href="../professional.html" class="mobile-nav-link">Professional</a>
+          <a href="../personal.html" class="mobile-nav-link">Personal</a>
+          <a href="../writing.html" class="mobile-nav-link active">Writing</a>
+          <a href="../contact.html" class="mobile-nav-link">Contact</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <article class="post-detail">
+      <header class="post-hero section-subtle">
+        <div class="container">
+          <a href="../writing.html" class="back-link">Writing archive</a>
+          <div class="post-detail-meta">
+            <time datetime="2026-06-13">June 13, 2026</time>
+            <span>12 min read</span>
+          </div>
+          <h1 class="post-detail-title">So You Want to Integrate Your SaaS with Google &amp; Microsoft? A Cautionary Tale</h1>
+          <p class="post-detail-subtitle">What Google and Microsoft taught me about integration architecture.</p>
+        </div>
+      </header>
+
+      <div class="container">
+        <div class="post-content">
+          <h2>Who is this post for?</h2>
+
+          <p class="post-lede">This post is primarily for product teams looking to integrate their SaaS products with the Google and Microsoft productivity suites. Our team went through quite a bit of toil. I am writing this to spare other product managers some of that pain...or at least help them understand what they are getting themselves into.</p>
+
+          <p>The saga begins with us spending months avoiding a roughly $4,500 security assessment. Google wanted us to complete the assessment through a third-party auditor before it would approve the restricted OAuth scopes our Google Drive integration needed. We had a launch to get out, and Google's Picker UI appeared to offer a simpler route. We took it.</p>
+
+          <p>The Picker could show files belonging to the person logged into Google, but our product had a meaningful separation between the administrator configuring an integration and the end user authenticating with Google. It also could not support the full set of programmatic file operations the product needed. We discovered those limitations after customers were already using the integration.</p>
+
+          <p>The cheap shortcut cost us months. We eventually completed the assessment anyway, rebuilt the integration, and faced the much uglier problem of moving people from an OAuth connection they had already authorized to a new one they had not.</p>
+
+          <p>I was fully on board with this shortcut at the time. We were moving quickly, the workaround looked viable, and I treated certification as administrative friction surrounding the integration. That was the mistake.</p>
+
+          <p>Certification, scopes, app registrations, tenant structure, account ownership, and customer authorization are all part of the integration architecture. I wish I had understood that more deeply at the beginning, because a bad decision in any one of those areas becomes painful to unwind after launch.</p>
+
+          <h2>Start With the Authorization Model, Not the Happy Path</h2>
+
+          <p>Most early integration demos answer a narrow question: can we connect the systems and make the intended action happen? Necessary, obviously. Nowhere near enough.</p>
+
+          <p>Before approving an integration approach, map every role that will touch it:</p>
+
+          <ul>
+            <li>Who configures the integration?</li>
+            <li>Who authenticates with the external service?</li>
+            <li>Can an administrator configure it on behalf of another user?</li>
+            <li>Must it perform background operations when nobody is present?</li>
+            <li>What happens when the authenticating employee leaves?</li>
+          </ul>
+
+          <p>Our Google shortcut passed the basic demo and failed the real operating model. The person using the Picker had to be the person authenticated in the browser. Once we tested the builder/admin separation honestly, the approach fell apart.</p>
+
+          <p>Test the least convenient legitimate user journey first: the customer administrator, the end user, the person with minimum permissions, and the background job that needs to keep working next Tuesday when nobody is staring at the browser. That is where shortcuts tend to fall apart.</p>
+
+          <h2>Treat OAuth Scopes as a Product Roadmap Decision</h2>
+
+          <p>OAuth scopes can look like an implementation detail. In practice, they define what your integration can become.</p>
+
+          <p>If an integration launches with one set of scopes and later needs broader access, customers may need to consent again. Depending on the platform and how your integration is deployed, you may need a new app registration or integration instance. You cannot quietly consent on a customer's behalf, and you should not build a migration plan that assumes customers will eagerly reauthenticate because you sent a nice email.</p>
+
+          <p>Before submitting an app for verification, build a scope roadmap:</p>
+
+          <ol>
+            <li>Document the actions required for the first release.</li>
+            <li>Identify the capabilities you reasonably expect over the next two or three years.</li>
+            <li>Determine which future capabilities require new scopes.</li>
+            <li>Ask whether the initial certification path supports those scopes.</li>
+            <li>Test the full scope set in a development environment.</li>
+          </ol>
+
+          <p>Do not ask for every available permission. Ask for the broadest set you can defend from a real product roadmap, because adding scopes later can mean asking every customer to reauthenticate.</p>
+
+          <h2>Google: Do the Painful Thing First</h2>
+
+          <p>For our use case, Google's restricted scopes required a <a href="https://appdefensealliance.dev/casa" target="_blank" rel="noopener noreferrer">Cloud Application Security Assessment, or CASA</a>. We eventually used TAC Security and pursued the broadest assessment path available to us. The process included a security questionnaire, dynamic scanning, static source review, remediation work, and a Letter of Validation.</p>
+
+          <p>Some of it felt like security theater. Some of it was useful. The dynamic scan found endpoints accepting HTTP where they should have required HTTPS. The assessment took several weeks, and the final validation letter required more chasing than I expected.</p>
+
+          <p>Google support did not behave like a continuous account team. Each interaction could involve a different reviewer with little apparent context from the prior exchange. We repeatedly received the default suggestion to use the Picker UI, even though we had already determined that Picker could not support our architecture. A scope correction sent us back through earlier steps.</p>
+
+          <p>Knowing what I know now, this is the order I would follow:</p>
+
+          <ol>
+            <li>Decide whether the integration genuinely requires restricted scopes.</li>
+            <li>If it does, begin the security-assessment process immediately.</li>
+            <li>Validate role separation and background operations before accepting a lighter UI-based alternative.</li>
+            <li>Test all anticipated scopes in a separate project.</li>
+            <li>Submit validation evidence and a concise technical justification for every scope.</li>
+            <li>Put renewal ownership on a team-managed alias and calendar.</li>
+          </ol>
+
+          <p>Google's current documentation says apps using restricted scopes require annual security reassessment. That makes renewal ownership an operational product requirement, not a compliance footnote. If the renewal notice goes to an employee who has left, the first person to tell you the integration stopped working may be a customer.</p>
+
+          <p>Also, older apps in your product portfolio may have been approved under policies or product paths that no longer exist. "We already have a Google integration" does not mean "we know how to launch one today."</p>
+
+          <h2>Microsoft: Get Your House in Order</h2>
+
+          <p>Our Microsoft work was difficult for a different reason. We were primarily a Google Workspace company with years of accumulated Microsoft odds and ends: production tenants, test tenants, old app registrations, personal test accounts, and unclear ownership. We were establishing a clean Microsoft foundation while building customer-facing integrations.</p>
+
+          <p>That is a bad time to discover your Microsoft estate.</p>
+
+          <p>Before building a customer-facing Microsoft integration, work with your IT team to inventory:</p>
+
+          <ul>
+            <li>Every Entra tenant, verified domain, and app registration</li>
+            <li>Every development and test environment</li>
+            <li>Every Partner Center account and Partner ID</li>
+            <li>Every owner of a subscription, app, or renewal</li>
+            <li>Every legacy customer connection that cannot move without reauthorization</li>
+          </ul>
+
+          <p>Then decide which environments are authoritative.</p>
+
+          <p>For us, the sustainable pattern was one production tenant on the product's verified domain and one development/demo/test tenant. Scope experimentation happened in test; known-good configurations moved to production.</p>
+
+          <p>The temptation is to create another Microsoft environment whenever an existing one is confusing. Resist it. Every new environment becomes another thing someone must own, secure, document, pay for, and eventually explain during an incident.</p>
+
+          <p>Microsoft publisher verification crossed boundaries between Entra, Partner Center, identity-provider-managed permissions, and human identity verification. Some actions needed elevated roles the team did not ordinarily grant. None of these issues was dramatic alone. Together, and with slow support cycles, they stretched into weeks...and then months.</p>
+
+          <p>This is the kind of work a PM can accidentally describe as "get the Microsoft app certified," as though it were one ticket. It is usually a small program involving product, engineering, IT, security, compliance, and whoever controls DNS. Plan it that way.</p>
+
+          <h2>What Do I Actually Get When I Buy an iPaaS?</h2>
+
+          <p>After we built several integrations, wrestled through certification, and wrote custom components when the platform's connectors fell short, I bluntly asked two people closest to the work:</p>
+
+          <p><strong>What do I actually get when I buy an iPaaS?</strong></p>
+
+          <blockquote><strong>The short answer:</strong> You buy credential management, hosted execution, scalability, and adapter lifecycle management. If the platform's prebuilt connectors cover your needs, you also buy development speed and insulation from many third-party API changes. If you build most connectors yourself, the iPaaS increasingly becomes expensive integration infrastructure.</blockquote>
+
+          <p>The biggest surprise was what we did not buy: expertise in getting third-party integrations certified.</p>
+
+          <p>Our team assumed that an iPaaS vendor powering Google and Microsoft integrations would be a rich source of experience with their certification processes. We were shocked by how little practical guidance the vendor could provide when we hit those problems. In retrospect, the boundary is clearer than I understood it at the time. The iPaaS powers the integration, but we are the app publisher asking Google and Microsoft to trust us with customer data. Certification is our process, our evidence, and our problem to solve.</p>
+
+          <p>The vendor may help around the edges, but its support cannot be the plan. I wish I had understood that much sooner.</p>
+
+          <p>Managing OAuth credentials, executions, scaling, monitoring, and connector compatibility is real work. But the value depends on how much of the platform you can actually use.</p>
+
+          <p>If a prebuilt connector supports the operations and scopes your product needs, the platform may save substantial engineering and maintenance effort. If the connector lacks a required capability and the vendor tells you to use a raw REST request, you are now writing and maintaining custom integration code on somebody else's infrastructure. You may still benefit from its credential management and hosted execution, but you are no longer receiving much connector lifecycle management for that integration.</p>
+
+          <p>Do not evaluate an iPaaS by the logos in its connector catalog. Evaluate it against your roadmap and the specific operations each integration requires. It will not own your authorization model, understand every role boundary, or make certification disappear. We learned all three of those the annoying way.</p>
+
+          <p>The decision is rarely as clean as "buy an iPaaS" or "build integrations ourselves." Ask:</p>
+
+          <ul>
+            <li>Which connectors actually cover our roadmap?</li>
+            <li>What does the platform operate when we write custom components?</li>
+            <li>How are credentials stored, rotated, and migrated?</li>
+            <li>What is the pricing unit: executions, connections, customer instances, or something else?</li>
+            <li>How would customers reauthorize if we left the platform?</li>
+          </ul>
+
+          <p>An iPaaS can reduce engineering work. It cannot remove the product consequences of OAuth.</p>
+
+          <h2>The Migration Is the Product Problem</h2>
+
+          <p>Technical teams can usually rebuild an integration. The harder problem is the customer connection.</p>
+
+          <p>OAuth consent belongs to the customer. Credentials cannot simply be reassigned to a different app registration or integration instance because your architecture changed. If customers must reauthenticate, your migration is now a product adoption campaign with support load, communication risk, drop-off, and possible churn.</p>
+
+          <p>A workaround that saves four weeks before launch but creates a future forced migration may be a terrible trade. A more expensive certification path that preserves the right authorization model may be the fastest path when measured across the life of the product.</p>
+
+          <p>Integration architecture has a ratchet. Once customers authorize and depend on a connection, some early decisions only move in one direction.</p>
+
+          <h2>A Pre-Build Checklist for Product Managers</h2>
+
+          <p>Before your team writes the production integration, get explicit answers to these questions.</p>
+
+          <h3>Product and roles</h3>
+          <ul>
+            <li>Who configures, authenticates, uses, and owns the integration?</li>
+            <li>Must it operate in the background?</li>
+            <li>What happens when the authenticating user leaves?</li>
+          </ul>
+
+          <h3>Scopes and certification</h3>
+          <ul>
+            <li>Which scopes are required now and within the roadmap horizon?</li>
+            <li>Which are sensitive or restricted?</li>
+            <li>What changes would trigger re-verification or customer re-consent?</li>
+          </ul>
+
+          <h3>Environments and ownership</h3>
+          <ul>
+            <li>Which tenant, cloud project, and app registration are authoritative?</li>
+            <li>Is the production app on the correct verified product domain?</li>
+            <li>Are all owner and renewal contacts team-managed aliases?</li>
+          </ul>
+
+          <h3>Operations and vendors</h3>
+          <ul>
+            <li>What does the vendor own, and what remains your responsibility?</li>
+            <li>How long do support-dependent steps take in practice?</li>
+          </ul>
+
+          <h3>Migration</h3>
+          <ul>
+            <li>Can existing customer authorizations move to a replacement app?</li>
+            <li>Can you maintain two versions during migration?</li>
+            <li>What happens to customers who never act?</li>
+          </ul>
+
+          <p>If the team cannot answer these questions, it is not ready to estimate the integration.</p>
+
+          <h2>Budget for the Bureaucracy You Actually Have</h2>
+
+          <p>The timelines below came from one team's experience, not a universal service-level agreement:</p>
+
+          <ul>
+            <li>A Google security assessment and app verification took roughly five to six weeks once we followed the correct path.</li>
+            <li>Establishing a clean Microsoft environment and verified publisher setup took several weeks.</li>
+            <li>Documenting appropriate Microsoft permissions took one to two months of iteration.</li>
+            <li>Support-dependent steps routinely took far longer than the underlying technical work.</li>
+          </ul>
+
+          <p>Rules and portals change, so verify the current process before planning. Then budget two to four times your optimistic estimate for critical-path work controlled by a large platform's support or verification organization.</p>
+
+          <p>And start those steps before the integration is "done." Waiting until launch readiness to begin certification is how a product ends up complete, unusable, and increasingly discussed in uncomfortable status meetings.</p>
+
+          <h2>What I Would Do Differently</h2>
+
+          <p>If I were starting the same work again, I would begin with a two-page integration authorization brief before approving implementation.</p>
+
+          <p>It would name the roles, scopes, certification path, authoritative environments, owner aliases, vendor responsibilities, renewal process, and reauthorization risks. Engineering, IT, security, and product would review it together. Any shortcut would need to explain how customers get off it later.</p>
+
+          <p>Then I would ask the team to attack the plan:</p>
+
+          <p>Where does role separation break? Which future scope forces re-consent? Which account belongs to a real person who may leave? Which environment does nobody fully understand? Which part are we assuming the iPaaS handles because we have not asked?</p>
+
+          <p>That work will feel slow when everyone wants to move quickly. It is still faster than rebuilding the integration and asking every customer to authorize it again.</p>
+
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">JK<span class="footer-logo-dot">.</span></div>
+        <p class="footer-copyright">© 2026 Josh Katinger. All rights reserved.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/josh-katinger/" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect width="4" height="12" x="2" y="9"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+          <a href="mailto:josh@katinger.com" class="footer-social-link" aria-label="Email">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
