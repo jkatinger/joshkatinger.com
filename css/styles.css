@@ -1519,8 +1519,28 @@ main {
   .mobile-menu-btn,
   .btn,
   .post-card-link,
+  .hero-orb,
+  .contact-orb,
+  .hero-social,
+  .highlight-icon,
+  .aviation-icon,
+  .audiobook-icon,
+  .project-badge,
+  .project-tags,
+  .project-metrics,
+  .post-card-tags,
+  .timeline-dot,
   .footer-social {
     display: none !important;
+  }
+
+  .hero-greeting,
+  .hero-name,
+  .hero-title,
+  .hero-description,
+  .hero-social {
+    opacity: 1 !important;
+    transform: none !important;
   }
 
   main {
@@ -1540,6 +1560,192 @@ main {
   .post-hero,
   .post-content {
     background: white !important;
+  }
+
+  .section,
+  .hero,
+  .contact-section,
+  .consulting-section {
+    padding: 0.2in 0 !important;
+  }
+
+  .hero {
+    min-height: 0;
+  }
+
+  .hero-content {
+    max-width: none;
+    text-align: left;
+  }
+
+  .hero-greeting,
+  .section-label {
+    color: #555 !important;
+    font-family: Arial, sans-serif;
+    font-size: 8.5pt;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .hero-name,
+  .section-title {
+    color: black !important;
+    font-family: Arial, sans-serif;
+    font-size: 25pt;
+    line-height: 1.12;
+  }
+
+  .hero-title,
+  .section-subtitle {
+    color: #444 !important;
+    font-family: Arial, sans-serif;
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+
+  .hero-description {
+    color: black !important;
+    font-size: 11pt;
+    line-height: 1.55;
+    margin: 0.2in 0 0;
+  }
+
+  .hero-description p,
+  .about-text,
+  .highlight-description,
+  .timeline-description,
+  .timeline-achievement,
+  .project-description,
+  .audiobook-description,
+  .contact-description,
+  .contact-action,
+  .post-card-excerpt {
+    color: black !important;
+  }
+
+  .section-header {
+    margin-bottom: 0.25in;
+    text-align: left;
+  }
+
+  .about-grid,
+  .highlights-grid,
+  .projects-grid,
+  .audiobooks-grid,
+  .contact-grid,
+  .writing-layout {
+    display: block;
+  }
+
+  .about-image-container,
+  .aviation-banner {
+    float: right;
+    margin: 0 0 0.2in 0.25in;
+    max-width: 2.2in;
+  }
+
+  .about-image,
+  .aviation-banner img {
+    border-radius: 0;
+  }
+
+  .about-content {
+    display: block;
+  }
+
+  .about-text,
+  .highlight-description,
+  .timeline-description,
+  .timeline-achievement,
+  .project-description,
+  .audiobook-description,
+  .contact-description,
+  .contact-action,
+  .post-card-excerpt {
+    font-size: 10.5pt;
+    line-height: 1.5;
+  }
+
+  .about-text.highlight,
+  .highlight-card,
+  .timeline-card,
+  .project-card,
+  .audiobook-card,
+  .contact-card,
+  .post-card {
+    background: white !important;
+    border: 1pt solid #bbb;
+    border-radius: 0;
+    break-inside: avoid;
+    color: black !important;
+    margin: 0 0 0.18in;
+    padding: 0.14in;
+  }
+
+  .highlight-title,
+  .timeline-role,
+  .project-title,
+  .audiobook-title,
+  .contact-title,
+  .post-card-title,
+  .aviation-title,
+  .writing-sidebar-title {
+    color: black !important;
+    font-family: Arial, sans-serif;
+  }
+
+  .highlights-grid,
+  .projects-grid,
+  .audiobooks-grid,
+  .contact-grid {
+    display: grid;
+    gap: 0.2in;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .timeline::before {
+    display: none;
+  }
+
+  .timeline-item {
+    padding-left: 0;
+  }
+
+  .timeline-period,
+  .timeline-company,
+  .audiobook-author,
+  .post-card-meta {
+    color: #555 !important;
+    font-family: Arial, sans-serif;
+    font-size: 8.5pt;
+  }
+
+  .timeline-achievements {
+    list-style: disc;
+    margin-left: 0.2in;
+  }
+
+  .timeline-achievement-bullet {
+    display: none;
+  }
+
+  .consulting-section {
+    border-top: 1pt solid #999;
+    text-align: left;
+  }
+
+  .writing-sidebar {
+    display: none;
+  }
+
+  .writing-feed {
+    gap: 0;
+  }
+
+  .contact-action svg,
+  .post-card-link svg {
+    display: none;
   }
 
   .post-hero {
